@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peel Challenge 🍉</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- GAME SCREEN -->
+  <div class="screen active" id="gameScreen">
+
+    <!-- TOP HUD -->
+    <div class="top-ui">
+      <div>Level <span id="level">1</span></div>
+      <div>Score <span id="score">0</span></div>
+    </div>
+
+    <!-- CENTER GAME -->
+    <div class="center">
+      <div id="watermelon">
+        <div id="safe-zone"></div>
+        <div id="perfect-zone"></div>
+        <div id="peel-bar"></div>
+      </div>
+
+      <div id="feedback"></div>
+    </div>
+
+    <!-- RIGHT UI (TikTok style) -->
+    <div class="side-ui">
+      <div>🔥 <span id="combo">0</span></div>
+      <div>❤️ <span id="lives">3</span></div>
+      <div>🏆 <span id="highScore">0</span></div>
+    </div>
+
+    <!-- BOTTOM HINT -->
+    <div id="hint">Tap to Stop</div>
+
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
