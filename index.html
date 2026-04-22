@@ -2,38 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peel Master 🍉</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Peel Master · Potato Peeler</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<video id="camera" autoplay playsinline></video>
-
-<div id="game">
-
-  <div id="hud">
-    <span>Score: <span id="score">0</span></span>
-    <span>Level: <span id="level">1</span></span>
+<div id="game-container">
+  
+  <!-- Settings Panel -->
+  <div id="settings-panel">
+    <h3>⚙️ Settings</h3>
+    <label>Fruit:
+      <select id="fruit-select">
+        <option value="apple" selected>🍎 Apple</option>
+        <option value="banana">🍌 Banana</option>
+        <option value="potato">🥔 Potato</option>
+      </select>
+    </label>
+    <label>Peeler Direction:
+      <select id="direction-select">
+        <option value="up">⬆️ Up (peels down)</option>
+        <option value="down" selected>⬇️ Down (peels up)</option>
+      </select>
+    </label>
+    <label>Speed:
+      <input type="range" id="speed-slider" min="2" max="10" value="5">
+    </label>
+    <button id="start-game">▶ Start Game</button>
   </div>
 
-  <div id="watermelon">
-    <img src="https://i.imgur.com/7yUvePI.png" id="melon-img">
+  <!-- Game UI -->
+  <div id="game-ui" style="display: none;">
+    <div id="hud">
+      <span>🍉 Score: <span id="score">0</span></span>
+      <span>⭐ Level: <span id="level">1</span></span>
+      <span>🔥 Streak: <span id="streak">0</span></span>
+    </div>
 
-    <div id="peel-layer"></div>
+    <canvas id="game-canvas"></canvas>
 
-    <div id="safe-zone"></div>
-    <div id="perfect-zone"></div>
+    <div id="peeler-container">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Crect x='10' y='10' width='80' height='15' rx='5' fill='%23B87333'/%3E%3Crect x='35' y='25' width='30' height='25' rx='3' fill='%238B4513'/%3E%3Crect x='40' y='0' width='20' height='10' fill='%23A9A9A9'/%3E%3C/svg%3E" id="peeler-img" alt="peeler">
+    </div>
 
-    <img src="https://i.imgur.com/2RMz9GZ.png" id="peeler">
+    <div id="feedback"></div>
   </div>
-
-  <canvas id="juice"></canvas>
-
-  <div id="feedback"></div>
 
 </div>
 
-<script src="app.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
